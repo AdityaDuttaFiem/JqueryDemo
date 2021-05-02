@@ -1,0 +1,81 @@
+<html>
+<head>
+<script language="javascript" src="jquery-3.6.0.js">
+</script>
+
+<script language="javascript" type="text/JavaScript">
+
+$(document).ready(function(){
+
+$("#sub").click(function(){
+    var x=$("#total").val();
+    $("#total").attr("disabled","");
+    $("#sub").attr("hidden","");
+    //("#total").val();
+    while(x>0){
+    $(this).before('Enter Passenger-'+x+' details:');
+    $(this).before('<table>'+
+                  '<tr>'+
+                  '<td>Name:</td><td><input type="text" required></td>'+
+                  '</tr>'+
+                  '<tr><td>Age:</td><td><input type="number" required></td>'+
+                  '</tr>'+
+                  '<tr>'+
+                  '<td>Male<input type="radio" id="gen" name="gen" ></td>'+
+                  '<td>Female<input type="radio" id="gen" name="gen" ></td>'+
+                  '</tr>'+
+                  '</table>');
+        x-=1;
+    }       
+    $(this).after( '<input type="submit" id="sub1" name="sub1">');
+    $("#div1").addClass("class1");
+} );
+
+});
+
+</script>
+<style>
+    .class1{
+        background-color: lightyellow;
+        margin-left: 150px;
+        margin-right: 150px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body bgcolor="aqua">
+<center>
+    <h1>Welcome to CTS Railway Reservation Service !!</h1>
+<form action="#">
+    <div id="div1">
+    <table>
+        <tr>
+            <td>Source city:</td>
+            <td><input type="text"  required></td>
+        </tr>
+        <tr>
+            <td>Destination city:</td>
+            <td><input type="text" required></td>
+        </tr>
+        <tr>
+            <td>Date of journey:</td>
+            <td><input type="date" required></td>
+        </tr>
+        <tr>
+            <td>No of Tickets:</td>
+            <td><input type="number" required id="total" name="total"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" id="sub" name="sub"></td>
+        </tr>
+    </table>
+    </div>
+</form>
+</center>
+</body>
+
+
+</html>
+
